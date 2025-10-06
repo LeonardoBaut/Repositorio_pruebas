@@ -1,0 +1,242 @@
+body {
+    font-family: Arial, sans-serif;
+    background: linear-gradient(275deg, #6EC1E4, #e9f5a2);
+    display: flex;
+    justify-content: start;
+    padding: 15px;
+    margin: 0;
+}
+
+.container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: flex-start;
+    width: 100%;
+    width: 1920px;
+    margin-top: 5% auto 0 auto;
+    gap: 10px;
+    box-sizing: border-box;
+    flex-wrap: wrap;
+}
+
+.inputs {
+    display: flex; 
+    flex-direction: column;
+    gap: 15px; 
+    width: 15%;
+    min-width: 250px;
+}
+
+.results {
+    display: flex; 
+    flex-direction: row;
+    align-items: stretch;
+    flex-wrap: wrap;
+    gap: 10px;
+    width: 76%;
+    transition: all 0.4s ease;
+}
+
+.graficas {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-items: stretch;
+    gap: 10px;                                                                                                                                                                                                                                                                                      px;
+    width: 100%;
+    margin-top: 50px;
+  }
+  
+  .graficas .card1 {
+    /* flex: 1 1 30%; */
+    /* flex-wrap: wrap; */
+    text-align: center;
+    height: 300px;
+    margin-bottom: 15px;
+    min-width: 280px;
+    max-width: 350px;
+    
+  }
+  
+  .graficas img {
+    width: 100%;
+    border-radius: 12px;
+    margin-top: 10px;
+  }
+
+/* --- Contenedor de las tarjetas --- */
+.cards-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    flex-wrap: stretch;
+    gap: 15px;
+    flex: 1 1 auto; 
+    transition: all 0.4s ease;
+}
+
+.card1 {
+    background-color: white;
+    padding: 15px;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    width: 100%;
+    margin-left: 10px;
+    min-width: 150px;
+}
+
+.card {
+    background-color: white;
+    padding: 15px;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    flex: 1 1 200px;
+    margin: 10px;
+    min-width: 150px;
+    /*max-width: 300px;*/
+    transition: all 0.4s ease;
+}
+
+.card1 h2, .card h3 {
+    font-size: 2em;
+    margin-bottom: 10px;
+    color: #333;
+}
+
+.card1 button {
+    background-color: #4CAF50;
+    color: white;
+    padding: 12px 18px;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 1em;
+    margin-top: 10px;
+}
+
+.card1 button:hover {
+    background-color: #45a049;
+}
+
+.card p {
+    font-size: 1em;
+    margin: 0;
+    color: #555;
+}
+
+.card .value {
+    font-size: 2.5em;
+    font-weight: bold;
+    text-align: center;
+    color: #4CAF50;
+}
+
+.card .icon {
+    font-size: 4em; 
+    color: #4CAF50;  
+    margin-top: 30px;
+  }
+  
+ 
+.card i {
+    display: block; 
+    text-align: center; 
+  }
+
+.map-container {
+    flex: 1 1 auto;
+    min-width: 400px;
+    max-width: 100%;
+    height: 400px;
+    display: flex;
+    align-items: stretch;
+    justify-content: center;
+    padding: 0;
+    box-sizing: border-box;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    transition: height 0.4s ease, opacity 0.4s ease;
+}
+
+#map {
+    width: 100%;
+    height: 100%;
+    border-radius: 12px;
+}
+
+/* 🔹 Cuando el mapa está oculto */
+.map-hidden {
+    display: none !important;
+}
+
+/* 🔹 Cuando el mapa está oculto, las tarjetas se expanden horizontalmente */
+.results.full-width {
+    justify-content: space-evenly;
+}
+
+.results.full-width .cards-container {
+    flex-wrap: wrap;           /* Las pone en fila */
+    justify-content: space-around;
+    width: 100%;
+    gap: 20px;
+}
+
+.results.full-width .card {
+    flex: 1 1 200px;
+    max-width: 230px;
+    margin: 10px;
+}
+
+@media (max-width: 1024px) {
+    .container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .inputs, .results , .graficas {
+        width: 100%;
+    }
+
+    .map-container {
+        width: 100%;
+        height: 350px;
+    }
+
+}
+
+@media (max-width: 768px) {
+    .inputs, .results {
+        width: 100%; 
+    } 
+   .card1, .card {
+        width: 100%;  
+        min-width: 100%;
+        max-width: 100%;
+    }
+
+    .results {
+        align-items: center;
+        flex-direction: column; 
+        gap: 15px;
+    }
+
+    .graficas{
+        flex-direction: column; 
+        gap: 5px;
+    }
+
+    .map-container {
+        height: 300px;
+        width: 100%;
+    }
+}

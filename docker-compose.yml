@@ -1,0 +1,23 @@
+version: '3.8'
+
+services:
+  clima-api:
+    build: ./clima_app
+    container_name: clima-fastapi
+    ports:
+      - "8040:8000"
+    volumes:
+      - ./clima_app:/app  
+      - ./apache_app/imagenes:/app/imagenes  
+    environment:
+      - PYTHONUNBUFFERED=1
+    command: uvicorn app:app --host 0.0.0.0 --port 8000 --reload
+
+  apache-web:
+    build: ./apache_app
+    container_name: clima-apache
+    ports:
+      - "8280:80"
+    volumes:
+      - ./apache_app:/usr/local/apache2/htdocs/ 
+      - ./apache_app/imagenes:/usr/local/apache2/htdocs/imagenes 

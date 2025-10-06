@@ -1,0 +1,12 @@
+fastapi
+uvicorn[standard]
+matplotlib
+pandas
+numpy
+xarray
+cartopy
+earthaccess
+requests
+dask
+netCDF4
+h5netcdf
